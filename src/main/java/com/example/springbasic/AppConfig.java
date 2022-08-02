@@ -16,21 +16,21 @@ public class AppConfig {
 
   @Bean
   public MemberService memberService() {
-    return new MemberServiceImpl(getMemberRepository());
+    return new MemberServiceImpl(MemberRepository());
   }
 
   @Bean
   public OrderService orderService() {
-    return new OrderServiceImpl(getMemberRepository(), getDiscountPolicy());
+    return new OrderServiceImpl(MemberRepository(), DiscountPolicy());
   }
 
   @Bean
-  public MemberRepository getMemberRepository() {
+  public MemberRepository MemberRepository() {
     return new MemoryMemberRepository();
   }
 
   @Bean
-  public DiscountPolicy getDiscountPolicy() {
+  public DiscountPolicy DiscountPolicy() {
 //    return new FixDiscountPolicy();
     return new RateDiscountPolicy();
   }
