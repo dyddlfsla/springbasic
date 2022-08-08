@@ -20,4 +20,15 @@ public class SingletonTest {
     assertThat(memberService1).isNotSameAs(memberService2);
   }
 
+  @Test
+  void singletonServiceTest() {
+    SingletonService singletonService1 = SingletonService.getInstance();
+    SingletonService singletonService2 = SingletonService.getInstance();
+
+    System.out.println("singletonService1 = " + singletonService1);
+    System.out.println("singletonService2 = " + singletonService2);
+
+    assertThat(singletonService1).isSameAs(singletonService2);
+  }
+
 }
