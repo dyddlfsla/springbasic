@@ -51,7 +51,11 @@ public class AppConfig {
    *
    * Q. 할인 정책이 FixDiscountPolicy → RateDiscountPolicy 로 바뀌었다고 하자. 어떤 부분을 변경해야 하는가?
    *
+   * ◆ 스프링 적용하기
    *
+   * 지금까지는 순수한 자바코드를 이용하여 DI 를 구현하였다. 이제는 spring 프레임워크를 적용시켜 본다.
+   * AppConfig 클래스에 @Configuration 을 붙인다. → 어플리케이션의 설정 정보를 담고 있다는 뜻이 된다.
+   * 각 메서드에 @Bean 을 붙여준다. 이제 메소드의 리턴 객체가 스프링 컨테이너에 스프링 빈으로 등록된다.
    *
    *
    * */
