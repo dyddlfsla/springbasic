@@ -1,6 +1,7 @@
 package com.example.springbasic;
 
 import com.example.springbasic.discount.DiscountPolicy;
+import com.example.springbasic.discount.FixDiscountPolicy;
 import com.example.springbasic.discount.RateDiscountPolicy;
 import com.example.springbasic.member.MemberRepository;
 import com.example.springbasic.member.MemberService;
@@ -43,6 +44,15 @@ public class AppConfig {
    * 클라이언트인 memberServiceImpl 입장에서 보면 의존관계를 마치 외부에서 주입해주는 것과 같다고 해서
    * DI(Dependency Injection), 즉 의존관계 주입 또는 의존성 주입이라고 한다.
    *
+   * AppConfig 를 통해서 관심사를 확실하게 분리했다.
+   * AppConfig 는 공연 기획자이다.
+   * AppConfig 는 구현 클래스를 선택한다. 즉 배역(역할, 인터페이스)에 맞는 배우(구현 클래스)를 선택한다. 애플리케이션이 어떻게 동작해야할지 전체 구성을 책임진다.
+   * 그렇다면 이제 배우들은 상대 배역으로 누가 오는지 생각할 필요가 없다. 그저 자신이 맡은 역할만 충실히 수행하면 되는 것이다.
+   *
+   * Q. 할인 정책이 FixDiscountPolicy → RateDiscountPolicy 로 바뀌었다고 하자. 어떤 부분을 변경해야 하는가?
+   *
+   *
+   *
    *
    * */
 
@@ -63,7 +73,13 @@ public class AppConfig {
 
   @Bean
   public DiscountPolicy DiscountPolicy() {
-//    return new FixDiscountPolicy();
+    /*
+    * return new FixDiscountPolicy();
+    * A. 메소드에서 리턴될 객체가 FixDiscountPolicy 인지, RateDiscountPolicy 인지 정해주면 되는 것이다. AppConfig 의 구성 정보만 변경할 뿐 다른 비지니스 코드에 영향을 주지 않는다.
+    * 이제 할인 정책을 변경해도 애플리케이션의 구성 역할을 담당하는 AppConfig 만 변경하면 된다.
+    * 클라이언트 코드인 OrderServiceImpl 을 포함해서 사용 영역의 어떤 코드도 변경할 필요가 없다.
+    * 물론 AppConfig 의 구성 영역은 당연히 변경된다. 구성 역할을 담당하는 AppConfig 는 공연 기획자이며 공연 기획자는 공연 참여자인 구현 클래스들을 모두 알아야 한다.
+    * */
     return new RateDiscountPolicy();
   }
 
