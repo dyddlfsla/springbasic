@@ -52,4 +52,11 @@ public class ApplicationContextSameTypeTest {
     }
 
   }
+
+  /*
+  * ◆ 스프링 Bean 조회 - 동일한 타입이 두 개 이상인 경우
+  * 타입으로 Bean 을 조회 시 같은 타입의 Bean 이 두 개 이상이면 오류가 발생한다.
+  * ac.getBeansOfType(): 해당 타입과 일치하는 모든 Bean 을 조회한다.
+  *
+  * */
 }

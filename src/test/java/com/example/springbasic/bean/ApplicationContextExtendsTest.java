@@ -67,4 +67,13 @@ public class ApplicationContextExtendsTest {
 
   }
 
+  /*
+  * ◆ 스프링 Bean 조회 - 상속 관계인 경우
+  *
+  * 부모 타입으로 조회하면, 자식 타입도 모두 함께 조회된다.
+  * 그렇기 때문에 만약 Object 타입으로 Bean 을 조회하면 존재하는 모든 스프링 Bean 을 찾게 된다.
+  *
+  *
+  * */
+
 }
