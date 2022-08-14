@@ -1,7 +1,6 @@
 package com.example.springbasic.order;
 
 import com.example.springbasic.discount.DiscountPolicy;
-import com.example.springbasic.discount.FixDiscountPolicy;
 import com.example.springbasic.member.Member;
 import com.example.springbasic.member.MemberRepository;
 
@@ -22,6 +21,9 @@ public class OrderServiceImpl implements OrderService{
     return new Order(memberId, itemName, itemPrice, discountPrice);
   }
 
+  public MemberRepository getMemberRepository() {
+    return memberRepository;
+  }
 }
 
 /*
