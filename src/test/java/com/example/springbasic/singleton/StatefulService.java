@@ -14,3 +14,9 @@ public class StatefulService {
   }
 
 }
+
+/*
+* StatefulService 의 price 필드는 공유되는 필드이다.
+*
+*
+* */
