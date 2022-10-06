@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
 @Configuration
-@ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class))
+@ComponentScan(
+    excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class),
+    basePackages = "com.example.springbasic.member")
 public class AutoAppConfig {
-  
+
 
 }
