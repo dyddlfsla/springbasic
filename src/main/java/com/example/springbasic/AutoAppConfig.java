@@ -10,5 +10,9 @@ import org.springframework.context.annotation.FilterType;
     basePackages = "com.example.springbasic.member")
 public class AutoAppConfig {
 
+//  @Bean(name = "memoryMemberRepository")
+//  MemberRepository memberRepository() {
+//    return new MemoryMemberRepository();
+//  }
 
 }
