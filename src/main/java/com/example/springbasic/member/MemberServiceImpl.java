@@ -1,9 +1,14 @@
 package com.example.springbasic.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
   private final MemberRepository memberRepository;
 
+  @Autowired //Component 를 사용하게 되면 먼저 작성했던 AppConfig 와 달리 의존관계를 명시할 방법이 없다. 해당 어노테이션을 추가적으로 덧붙이게 된다.
   public MemberServiceImpl(MemberRepository memberRepository) {
     this.memberRepository = memberRepository;
   }
