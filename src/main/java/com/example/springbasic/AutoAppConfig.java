@@ -7,7 +7,7 @@ import org.springframework.context.annotation.FilterType;
 @Configuration
 @ComponentScan(
     excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class),
-    basePackages = "com.example.springbasic.member")
+    basePackages = "com.example.springbasic")
 public class AutoAppConfig {
 
 //  @Bean(name = "memoryMemberRepository")
